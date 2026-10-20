@@ -8,6 +8,7 @@ import stockManeger.api_stock.infrastructur.entity.Categoria;
 import stockManeger.api_stock.infrastructur.entity.Produto;
 import stockManeger.api_stock.infrastructur.repository.ProdutoRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,6 +19,9 @@ public class ProdutoService {
 
     public Optional<Produto> procurarPorId(Long id) {
         return produtoRepository.findById(id);
+    }
+    public List<Produto> listarTodos(){
+        return produtoRepository.findAll();
     }
     public Produto procurarPorNome(String nome) {
         return produtoRepository.findByNome(nome);
